@@ -1,0 +1,155 @@
+body {
+    background-color: #a1cca5;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+.exercise--Form-And-List {
+    display: inline-flex;
+    padding: 2em;
+    width: 100%;
+}
+
+.exercise--Form-And-List > .exercise--Form {
+    display: inline-block;
+    border: solid 1px black;
+    height: 65em;
+    margin: 1em;
+    width: 35%;
+    padding: 1em;
+}
+
+.profile {
+    margin-left: 5%;     
+} 
+
+.exercise--Form-And-List > .exercise--Form > form > textarea {
+    width: 80%;
+    height: 4em;
+    resize: none;
+}
+
+.exercise--Form-And-List > .exercise--List {
+    display: inline-block;
+    border: solid 1px black;
+    margin: 1em;
+    padding: 1em;
+    width: 35%;
+    margin-left: 10%;
+}
+
+.exercise--Form-And-List > .exercise--List > h2 {
+    font-weight: 900;
+}
+
+.navbar > a {
+    padding: 10px;
+    margin-left: 20%;
+    font-family: "Inter", sans-serif;
+    
+}
+
+.navbar > a:link {
+    color:#8fb996;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+
+.logout--button {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    margin-left: 5%;
+    background-color: #a1cca5;
+    transition: 0.3s;
+    opacity: .6;
+    height: 1em;
+} 
+
+.logout--button > button:hover {
+    opacity: 1;
+    transition: ease-in;
+    background-color: #8fb996;
+}
+
+.navbar {
+    background-color: #415d43;
+    height: 6rem;
+    padding-top: 1rem;
+    display: inline-flex;
+    width: 100%;
+}
+
+.exercise--Form > form > h4 {
+    margin-top: 1em;
+    margin-bottom: 0em;
+}
+
+.profile > h1 {
+   margin-left: 12.5%;
+   margin-bottom: 0em;
+}
+
+.exercise--Form > img {
+    margin-top: .05em;
+    width: 95%;
+    height: 42em;
+    margin-left: 2.5%;
+}
+
+.workout--Div {
+    display:inline ;  
+    padding: 2em;
+    width: 100%;
+    
+}
+
+/* .workout--Div > .workout--Form {
+    display: inline-block;
+    height: 65em;
+    margin: 1em;
+    width: 50%;
+    padding: 1em;
+    margin-right: 20%;
+} */
+
+.workout--Page > h1, hr{
+    position: relative;
+    text-align: center;
+}
+
+.workout--Page > hr {
+    width: 20em;
+    color: black;
+}
+
+.workout--Page {
+    position: relative;
+    text-align: center;
+}
+
+.workout--Form {
+    position: relative;
+    display:block;
+    margin-top: 100x;
+    border: 1px black solid;
+    padding: 10px;
+}
+
+.workout--FormPage {
+    display: inline-flex;
+    padding: 15px;
+    margin-left: 15%;
+    width: 150%;
+}
+.workout--FormPage > img {
+    width: 450px;
+    height: 500px;
+    margin-left: 10%;
+}
+.workout--List {
+    width: 50%;
+    position: relative;
+    margin-left: 25%;
+}
+
+

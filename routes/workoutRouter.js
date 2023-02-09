@@ -1,7 +1,12 @@
 const express = require("express")
+const exercise = require("../models/exercise")
 const workoutRouter = express.Router()
 const Workout = require("../models/workout")
+const Set = require("../models/workout")
 
+// const populateQuery = [
+//     { path: "Exercise", populate: {path: ""}}
+// ]
 workoutRouter.get("/", (req, res, next) => {
     //Get Full List of workouts
     Workout.find((err, workouts) => {
@@ -15,14 +20,17 @@ workoutRouter.get("/", (req, res, next) => {
 //Add new workout
 workoutRouter.post("/", (req, res, next) => {
     req.body.user = req.auth._id
+    
     const newWorkout = new Workout(req.body)
     newWorkout.save((err, savedWorkouts) => {
         if(err){
             res.status(500)
             return next(err)
         }
+
         return res.status(201).send(savedWorkouts)
     })
+    
 })
 
 //Get Workout by id
@@ -45,14 +53,15 @@ workoutRouter.get("/user/workout", (req, res, next) => {
             res.status(500)
             next(err)
         }
+        
         return res.status(200).send(workout)
     })
+    .populate("exerciseSet.exercise")
 })
 
 //Delete Workout
 workoutRouter.delete("/:workoutId", (req, res, next) => {
     console.log(req.params)
-    
     Workout.findOneAndDelete(
         { _id: req.params.workoutId},
         (err, deletedWorkout) => {

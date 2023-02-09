@@ -27,7 +27,7 @@ clientRouter.post("/", (req, res, next) => {
 
 //Get Client by user id
 
-clientRouter.get("/user", (req, res, next) => {
+clientRouter.get("/user/client", (req, res, next) => {
     Client.find({user: req.auth._id}, (err, client) => {
         if(err){
             res.status(500)

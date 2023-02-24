@@ -21,6 +21,11 @@ export default function Navbar(props){
         color:"#8fb996"
       }}
       >Create New Workout</Link>
+      {/* <Link to="/clients"
+       style={{
+        color:"#8fb996"
+      }}
+      >Clients</Link> */}
       <div className='logout--button'> <button onClick={logout}>Logout</button></div>
     </div>
       

@@ -7,14 +7,13 @@ import Profile from "./components/Profile"
 import ProtectedRoute from "./components/ProtectedRoute"
 import Workout from "./components/workoutComponents/Workout"
 import WorkoutUseReducer from "./components/workoutComponents/UserReducerTest/WorkoutUseReducer"
+import Client from "./components/ClientComponents/Client"
 
 export default function App() {
   const { token, logout, user } = useContext(UserContext)
   return (
     <div>
-      {/* <iframe width="420" height="315"
-        src="https://www.youtube.com/embed/3LBp4lWQqTY">
-      </iframe> */}
+    
       {token && <Navbar logout={logout} />}
       <Routes>
         <Route
@@ -29,6 +28,14 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+         {/* <Route
+          path="/clients"
+          element={
+            <ProtectedRoute token={token} redirectTo="/">
+              <Client />
+            </ProtectedRoute>
+          } */}
+        {/* /> */}
         <Route
           path="/workout"
           element={

@@ -37,6 +37,7 @@ clientRouter.get("/user/client", (req, res, next) => {
     })
 })
 
+
 //Delete Client
 clientRouter.delete("/:clientId", (req, res, next) => {
     Client.findOneAndDelete(
@@ -51,7 +52,7 @@ clientRouter.delete("/:clientId", (req, res, next) => {
     )
 })
 
-//Update Exercise
+//Update Client
 clientRouter.put("/:clientId", (req, res, next) => {
     Client.findOneAndUpdate(
         { _id: req.params.clientId, user: req.auth._id},

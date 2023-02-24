@@ -4,6 +4,7 @@ import axios from "axios"
 import { ACTIONS } from "../components/workoutComponents/UserReducerTest/WorkoutUseReducer"
 import { defaultExercises } from "./defaultExercises"
 
+
 export const UserContext = React.createContext()
 
 const userAxios = axios.create()
@@ -77,7 +78,7 @@ export default function UserProvider(props) {
                 const { user, token } = res.data
                 localStorage.setItem("token", token)
                 localStorage.setItem("user", JSON.stringify(user))
-
+                getUserClients()
                 getUserExercises()
                 getUserWorkouts()
                 setUserState(prevUserState => ({
@@ -123,6 +124,7 @@ export default function UserProvider(props) {
     useEffect(() => {
         getUserExercises()
         getUserWorkouts()
+        getUserClients()
     }, [])
 
 
@@ -262,6 +264,22 @@ export default function UserProvider(props) {
        
         addWorkout(completedWorkout)
         navigate("/workout")
+    }
+
+    //Client Section
+
+    function getUserClients(){
+        userAxios.get("/api/client/user/client")
+        .then(res => console.log(res.data))
+        // .then (res => 
+        //     {
+            
+        //     setUserState(prevState => ({
+        //         ...prevState,
+        //         clients: [...prevState.clients, res.data]
+        //     }))
+        // })
+        .catch(err => console.log(err.response.data.errMsg))
     }
     
     return (
